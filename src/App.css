@@ -1,36 +1,100 @@
-.App {
-  text-align: center;
+body,
+html {
+  margin: 0;
+  background-color: #530a1a;
+  font-family: "Roboto", sans-serif;
+  cursor: default;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-.p1 {
-  color: red;
+header {
+  flex-direction: column;
+  display: unset;
+  height: 64px;
 }
 
 .headerBox {
   background-color: #222429;
   height: 64px;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: left;
+  justify-content: flex-end;
   align-items: center;
 }
 
-.toDoIcon{
-  width: 2rem;
-  height: 2rem;
-  margin: 0;
-  line-height: 60px;
-  padding-left: 20px;
-  color: white;
+.homeContainer {
+  height: 100vh;
 }
+
+.checkBoxContainer {
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.AddCharButton {
+  width: 11rem;
+  height: 2.8rem;
+}
+
+.newCharContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.newCharSettings {
+  padding-top: 1rem;
+  width: 20rem;
+  height: 30rem;
+  /* background-color: red !important; */
+}
+
+
+.FormControlLabel > label {
+  justify-content: space-between;
+}
+
+.characterForm {
+  padding-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+
+
+.bodyPage {
+  padding-top: 2rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.navbarContainer {
+  line-height: 60px;
+  display: flex;
+  align-items: center;
+}
+
+
+/* .checkListIcon{
+  font-size: 3rem;
+  margin: 0;
+  color: white;
+  padding-right: 15px;
+  padding-top: 6px;
+}
+
+.questionIcon {
+  font-size: 2.2rem;
+  margin: 0;
+  padding-right: 50px;
+  color: white;
+} */
 
 .brandName {
   color: white;
@@ -38,6 +102,8 @@
   margin: 0;
   line-height: 60px;
   padding-left: 5px;
+  position: fixed;
+  left: 10px;
 }
 
 @media (prefers-reduced-motion: no-preference) {
