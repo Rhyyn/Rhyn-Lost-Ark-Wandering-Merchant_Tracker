@@ -1,7 +1,7 @@
 body,
 html {
   margin: 0;
-  background-color: #530a1a;
+  background-color: white;
   font-family: "Roboto", sans-serif;
   cursor: default;
 }
@@ -36,8 +36,23 @@ header {
 }
 
 .AddCharButton {
+  -webkit-box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.72);
+  box-shadow: 0px 0px 6px 2px rgba(0, 0, 0, 0.72);
   width: 11rem;
-  height: 2.8rem;
+  height: 3rem;
+  color: white;
+  font-size: 1.2rem;
+  text-shadow: 1px 1px 2px black;
+  padding: 0;
+  border: 1px solid #540e83;
+  border-radius: 12px;
+  background-color: #5e1291;
+}
+
+.AddCharButton:hover {
+  background-color: #540e83;
+  -webkit-box-shadow: 0px 0px 10px 2px #540e83;
+  box-shadow: 0px 0px 10px 2px #540e83;
 }
 
 .newCharContainer {
@@ -45,26 +60,21 @@ header {
   flex-direction: column;
   align-items: center;
 }
-
-.newCharSettings {
-  padding-top: 1rem;
-  width: 20rem;
-  height: 30rem;
-  /* background-color: red !important; */
+.AddClass {
+  text-align: center;
 }
 
-
-.FormControlLabel > label {
-  justify-content: space-between;
+.DropdownDivider {
+  text-align: center;
 }
+
 
 .characterForm {
   padding-top: 0.5rem;
   display: flex;
   justify-content: center;
+  flex-direction: column;
 }
-
-
 
 .bodyPage {
   padding-top: 2rem;
@@ -80,7 +90,6 @@ header {
   align-items: center;
 }
 
-
 /* .checkListIcon{
   font-size: 3rem;
   margin: 0;
@@ -95,6 +104,34 @@ header {
   padding-right: 50px;
   color: white;
 } */
+
+/* ---MERCHANT BODY--- */
+
+.merchantBody{
+  display: flex;
+  justify-content: space-around;
+  padding: 1rem;
+  background-color: #282c34;
+  text-align: center;
+}
+
+
+
+/* ---MERCHANT CARD--- */
+
+.merchantCard {
+  border: 1px solid white;
+  color: white;
+  margin: 1rem;
+  width: 25rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.merchantGroupTitle {
+  color: white;
+}
 
 .brandName {
   color: white;
