@@ -1,69 +1,86 @@
 import React from "react";
-import { Button } from "@mui/material";
 import CharacterCreation from "./CharacterCreation";
 import { useState } from "react";
-import { TextField, Paper } from "@mui/material";
-import { styled } from "@mui/styles";
+import { DropdownButton, Dropdown, ButtonGroup } from "react-bootstrap";
+import DropdownItem from "react-bootstrap/esm/DropdownItem";
+import "bootstrap/dist/css/bootstrap.css";
 
 const AddCharacter = () => {
   const [show, setShow] = useState(false);
+  const [loaClass, setLoaClass] = React.useState("");
 
-  const CustomTextField = styled(TextField)({  // styling of Textfield
-    '& label.Mui-focused': {
-      color: 'white',
+  let rdyClasses = [
+    {
+      Warrior: ["Berserker", "Paladin", "Gunlancer"],
     },
-    '& .MuiInput-underline:after': {
-      borderBottomColor: 'white',
+    {
+      Martial: ["Striker", "Wardancer", "Scrapper", "Soulfist"],
     },
-    '& .MuiInputLabel-root': {
-        color: 'white'
-      },
-    '& .MuiOutlinedInput-root': {
-      '& fieldset': {
-        borderColor: 'white',
-        border: '2px solid'
-      },
-      '&:hover fieldset': {
-        borderColor: 'yellow',
-      },
-      '&.Mui-focused fieldset': {
-        borderColor: 'white',
-      },
-      '&.MuiInputBase-root' : {
-          color: 'white'
-      },
-    //   '&.MuiInputBase-input': {
-    //       color: 'white'
-    //   }
+    {
+      Gunner: ["Gunslinger", "Artillerist", "Deadeye", "Sharpshooter"],
     },
-  });
+    {
+      Mage: ["Bard", "Sorceress"],
+    },
+    {
+      Assassin: ["Shadowhunter", "Deathblade"],
+    },
+  ];
 
-  const CustomPaperStyle = styled(Paper)({ // Styling of Paper
-      '&.MuiPaper-root': {
-          backgroundColor: '#211857',
-          marginTop: '1rem'
-      },
-  })
-
+  const handleChange = (event) => {
+    setLoaClass(event.target.value);
+  };
 
   return (
     <div className="newCharContainer">
-      <Button
+      <button
+        value="AddChar"
         className="AddCharButton"
-        variant="contained"
         onClick={() => setShow(!show)}
       >
         {show ? "Hide" : "Add Character"}
-      </Button>
+      </button>
+
       {show && (
-        <CustomPaperStyle elevation={2} className="newCharSettings" >
-          <form className="characterForm">
-            <CustomTextField label="Character Name" id="custom-css-outlined-input" />
-          </form>
-        </CustomPaperStyle>
+        <form className="characterForm">
+          <label>
+            <input type="text" value="Character Name"></input>
+          </label>
+          <DropdownButton
+            variant="primary"
+            id="dropdown-basic-button"
+            title="Add Class"
+            autoClose="true"
+            className="test"
+          >
+            <p className="DropdownDivider">Warrior</p>
+              {rdyClasses.forEach((item) => {
+                for (let key in item) {
+                  if (key === "Warrior") {
+                    item.Warrior.forEach((item) => {
+                      return (<p>{item}</p>);
+                    });
+                  }
+                }
+              })}
+
+            <p className="DropdownDivider">Martial Artists</p>
+            <p className="DropdownDivider">Gunner</p>
+            <p className="DropdownDivider">Mage</p>
+            <p className="DropdownDivider">Assassin</p>
+          </DropdownButton>
+        </form>
       )}
     </div>
   );
 };
 
 export default AddCharacter;
+
+// {warriorClasses.map((item) => {
+//   return (
+//     <Dropdown.Item key={item} value={item}>
+//       {item}
+//     </Dropdown.Item>
+//   );
+// })}
