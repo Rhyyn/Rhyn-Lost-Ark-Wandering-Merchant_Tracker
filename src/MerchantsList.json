@@ -1,0 +1,450 @@
+{
+  "merchants01": [
+    {
+      "group": "1",
+      "name": "Lucas",
+      "location": "Yudia",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "1",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "1",
+      "name": "Morris",
+      "location": "East Luterra",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "1",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "1",
+      "name": "Mac",
+      "location": "Anikka",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "1",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "1",
+      "name": "Jeffrey",
+      "location": "Shushire",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "1",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "1",
+      "name": "Dorella",
+      "location": "Feiton",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "1",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          }
+        ]
+      }
+    }
+  ],
+  "merchants02": [
+    {
+      "group": "2",
+      "name": "Malone",
+      "location": "West Luterra",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "2",
+      "name": "Burt",
+      "location": "East Luterra",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "2",
+      "name": "Oliver",
+      "location": "Tortoyk",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "2",
+      "name": "Nox",
+      "location": "Arthetine",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "2",
+      "name": "Aricer",
+      "location": "Rohendel",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "2",
+      "name": "Rayni",
+      "location": "Punika",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    }
+  ],
+  "merchants03": [
+    {
+      "group": "3",
+      "name": "Ben",
+      "location": "Rethramis",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "2",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "9",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "3",
+      "name": "Peter",
+      "location": "North Vern",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "3",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "10",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "3",
+      "name": "Laitir",
+      "location": "Yorn",
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "12",
+            "minute": "30"
+          },
+          {
+            "hour": "3",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "6",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "10",
+            "minute": "30"
+          }
+        ]
+      }
+    }
+  ]
+}
