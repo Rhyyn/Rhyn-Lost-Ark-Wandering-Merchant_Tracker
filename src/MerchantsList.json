@@ -1,5 +1,5 @@
 {
-  "merchants01": [
+  "merchants": [
     {
       "group": "1",
       "name": "Lucas",
@@ -164,9 +164,7 @@
           }
         ]
       }
-    }
-  ],
-  "merchants02": [
+    },
     {
       "group": "2",
       "name": "Malone",
@@ -364,9 +362,7 @@
           }
         ]
       }
-    }
-  ],
-  "merchants03": [
+    },
     {
       "group": "3",
       "name": "Ben",
