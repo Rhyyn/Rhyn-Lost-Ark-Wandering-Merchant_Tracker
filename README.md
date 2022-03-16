@@ -1,3 +1,3 @@
-## LOST ARK TO DO CHECKLIST
+## LOST ARK TO DO / WANDERING MERCHANT TRACKER
 
-Simple Lost Ark To Do Checklist for upcoming MMO Lost ark
+Simple Lost Ark To Do and Wandering Merchant Tracker for Lost Ark Game.
