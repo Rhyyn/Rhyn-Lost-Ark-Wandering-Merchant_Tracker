@@ -25,6 +25,10 @@
           {
             "hour": "8",
             "minute": "30"
+          },
+          {
+            "hour": "11",
+            "minute": "30"
           }
         ]
       }
@@ -53,6 +57,10 @@
           },
           {
             "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "11",
             "minute": "30"
           }
         ]
@@ -83,6 +91,10 @@
           {
             "hour": "8",
             "minute": "30"
+          },
+          {
+            "hour": "11",
+            "minute": "30"
           }
         ]
       }
@@ -111,6 +123,10 @@
           },
           {
             "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "11",
             "minute": "30"
           }
         ]
@@ -141,6 +157,10 @@
           {
             "hour": "8",
             "minute": "30"
+          },
+          {
+            "hour": "11",
+            "minute": "30"
           }
         ]
       }
@@ -154,7 +174,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -187,7 +207,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -220,7 +240,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -253,7 +273,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -286,7 +306,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -319,7 +339,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -354,7 +374,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -387,7 +407,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
@@ -420,7 +440,7 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "12",
+            "hour": "00",
             "minute": "30"
           },
           {
