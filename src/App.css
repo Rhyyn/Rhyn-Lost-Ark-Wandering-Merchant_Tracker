@@ -106,15 +106,14 @@ header {
 } */
 
 .merchantPage {
-  height: 100vh;
+  height: calc(100vh - 64px);
   background-color: #181a1f;
 }
 
 /* ---MERCHANT BODY--- */
 
 .merchantBody{
-  display: flex;
-  justify-content: space-around;
+  height: 100%;
   padding: 1rem;
   background-color: #282c34;
   text-align: center;
