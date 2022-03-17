@@ -7,35 +7,34 @@ const CountdownCompo = (props) => {
   const hoursArray = [];
   const minutesArray = [];
   const currentHour = new Date().getHours();
+  const currentTime = new Date().getTime();
+  const allSpawnTimes = [];
 
-  // Convert Merchant hour spawn from AM to PM if currentHour is between 12 and 23 then Push to new hoursArray
+  // push all spawn times as MS date and convert to 24h Format
   data &&
-    data.map((item, index) => {
+    data.map((item) => {
       if (currentHour >= 12) {
-        hoursArray.push(parseInt(item.hour) + 12);
-        minutesArray.push(item.minute);
+        allSpawnTimes.push(
+          new Date().setHours(parseInt(item.hour) + 12, item.minute, 0)
+        );
       } else {
-        hoursArray.push(item.hour);
-        minutesArray.push(item.minute);
+        allSpawnTimes.push(new Date().setHours(item.hour, item.minute, 0));
       }
     });
 
-  // // Find hour that is the closest to currentHour clockwise
-  const hourFound = hoursArray.find(function (element) {
-    return element > currentHour;
+  //find closest spawn Time from currentTime
+  const closestTime = allSpawnTimes.find(function (element) {
+    // console.log("goal is : " + element);
+    // console.log("currentTime is : " + currentTime);
+    return element > currentTime;
   });
-
-  // Previous way of finding closest hour but not clockwise
-  // const output = hoursArray.reduce((prev, curr) =>
-  //   Math.abs(curr - currentHour) < Math.abs(prev - currentHour) ? curr : prev
-  // );
 
   return (
     <div className="merchantCard">
       <p>{props.wantedMerchant.name}</p>
       <p>Name: {props.wantedMerchant.name}</p>
       <p>Location: {props.wantedMerchant.location}</p>
-      <CountdownTimer hour={hourFound}></CountdownTimer>
+      <CountdownTimer closestTime={closestTime}></CountdownTimer>
       <button
         className={props.wantedMerchant.name}
         onClick={() => setShowSpawntable(!showSpawnTable)}
