@@ -7,7 +7,8 @@ import { DropdownButton, Dropdown } from "react-bootstrap";
 const Merchant = () => {
   const merchants = MerchantList.merchants;
   const [wantedMerchant, setWantedMerchant] = useState([]);
-  const [components, setComponents] = useState();
+  // hideThisComponent && console.log(hideThisComponent.parentElement);
+
 
   const onClick = (item) => {
     //                        Add Merchant user chosed to State to pass down to CountdownCompo
@@ -49,6 +50,7 @@ const Merchant = () => {
             //      map through then return each merchant user selected
             return (
               <CountdownCompo
+                id={index}
                 key={index}
                 wantedMerchant={item}
               ></CountdownCompo>
@@ -61,40 +63,4 @@ const Merchant = () => {
 
 export default Merchant;
 
-// PREVIOUS VERSION OF MAP
 
-{
-  /* <div className="merchantGroup">
-<h2 className="merchantGroupTitle">Schedule 1</h2>
-{MerchantList.merchants01.map((item, index) => (
-  <CountdownCompo
-    key={index}
-    merchantName={item.name}
-    merchantLocation={item.location}
-    merchantSchedule={item.spawntimer}
-  ></CountdownCompo>
-))}
-</div>
-<div className="merchantGroup">
-<h2 className="merchantGroupTitle">Schedule 2</h2>
-{MerchantList.merchants02.map((item, index) => (
-  <CountdownCompo
-    key={index}
-    merchantName={item.name}
-    merchantLocation={item.location}
-    merchantSchedule={item.spawntimer}
-  ></CountdownCompo>
-))}
-</div>
-<div className="merchantGroup">
-<h2 className="merchantGroupTitle">Schedule 3</h2>
-{MerchantList.merchants03.map((item, index) => (
-  <CountdownCompo
-    key={index}
-    merchantName={item.name}
-    merchantLocation={item.location}
-    merchantSchedule={item.spawntimer}
-  ></CountdownCompo>
-))}
-</div> */
-}

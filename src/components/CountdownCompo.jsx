@@ -22,34 +22,42 @@ const CountdownCompo = (props) => {
       }
     });
 
+  // for (let index = 0; index < data.length; index++) {
+  //   const element = data[index];
+  //   console.log(element.hour + ":" + element.minute);
+  // }
+
   //find closest spawn Time from currentTime
-  const closestTime = allSpawnTimes.find(function (element) {
-    // console.log("goal is : " + element);
-    // console.log("currentTime is : " + currentTime);
-    return element > currentTime;
-  });
+
+  const onClick = (e) => {
+    e.target.parentElement.id = "hidden";
+  };
 
   return (
-    <div className="merchantCard">
-      <p>{props.wantedMerchant.name}</p>
+    <div className="merchantCard" id={props.id}>
       <p>Name: {props.wantedMerchant.name}</p>
       <p>Location: {props.wantedMerchant.location}</p>
-      <CountdownTimer closestTime={closestTime}></CountdownTimer>
+      <CountdownTimer allSpawnTimes={allSpawnTimes} name={props.wantedMerchant.name}></CountdownTimer>
       <button
         className={props.wantedMerchant.name}
         onClick={() => setShowSpawntable(!showSpawnTable)}
       >
         Show SpawnTable for this Merchant
       </button>
-      {showSpawnTable
-        ? data.map((item, index) => {
-            return (
-              <p key={index}>
-                {item.hour}:{item.minute}
-              </p>
-            );
-          })
-        : null}
+      <ul>
+        
+        {showSpawnTable
+          ? data.map((item, index) => {
+              return (
+                <li className="spawnTableList" key={index}>
+                  {item.hour}:{item.minute}
+                </li>
+              );
+            })
+          : null}
+      </ul>
+
+      <button onClick={(e) => onClick(e)}>Delete Me</button>
     </div>
   );
 };
