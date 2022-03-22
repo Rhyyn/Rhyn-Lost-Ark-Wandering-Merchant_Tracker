@@ -167,6 +167,14 @@ header {
 .App-link {
   color: #61dafb;
 }
+.spawnTableList{
+  display: inline;
+  padding: 0.5rem;
+}
+
+#hidden {
+  display: none;
+}
 
 @keyframes App-logo-spin {
   from {
