@@ -7,8 +7,8 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "1",
-            "minute": "25"
+            "hour": "5",
+            "minute": "26"
           },
           {
             "hour": "4",

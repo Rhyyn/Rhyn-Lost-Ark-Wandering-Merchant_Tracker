@@ -169,12 +169,13 @@ header {
 }
 .spawnTableList{
   display: inline;
-  padding: 0.5rem;
+  padding: 0.3rem;
 }
 
 #hidden {
   display: none;
 }
+
 
 @keyframes App-logo-spin {
   from {
