@@ -1,11 +1,10 @@
 import React from "react";
-import Navbar from "./Navbar";
 
 const Header = () => {
   return (
       <div className="headerBox">
-        <h1 className="brandName">Lost Ark To Do</h1>
-        <Navbar />
+        <h1 className="brandName">Lost Ark Merchant Tracker</h1>
+        <img className="brandLogo" src="/images/mokokoLogo.png"/>
       </div>
   );
 };
