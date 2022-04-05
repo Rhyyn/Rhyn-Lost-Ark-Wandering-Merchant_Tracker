@@ -6,10 +6,14 @@ html {
   cursor: default;
 }
 
+/* --- HEADER --- */
+
 header {
   flex-direction: column;
   display: unset;
   height: 64px;
+  z-index: 1090;
+  position: sticky;
 }
 
 .headerBox {
@@ -20,9 +24,31 @@ header {
   width: 100%;
   display: flex;
   flex-direction: row;
-  justify-content: flex-end;
+  justify-content: space-between;
   align-items: center;
 }
+
+.brandName {
+  color: white;
+  font-size: 1.5rem;
+  margin: 0;
+  line-height: 60px;
+  padding-left: 5px;
+  left: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  .brandName {
+    font-size: 1.2rem;
+  }
+}
+
+.brandLogo {
+  height: 100%;
+  padding-right: 1rem;
+}
+
+/* ---END OF HEADER --- */
 
 .homeContainer {
   height: 100vh;
@@ -68,7 +94,6 @@ header {
   text-align: center;
 }
 
-
 .characterForm {
   padding-top: 0.5rem;
   display: flex;
@@ -90,40 +115,42 @@ header {
   align-items: center;
 }
 
-/* .checkListIcon{
-  font-size: 3rem;
-  margin: 0;
-  color: white;
-  padding-right: 15px;
-  padding-top: 6px;
-}
-
-.questionIcon {
-  font-size: 2.2rem;
-  margin: 0;
-  padding-right: 50px;
-  color: white;
-} */
-
 .merchantPage {
-  height: calc(100vh - 64px);
-  background-color: #181a1f;
+  height: 100vh;
+  background-color: #282c34;
 }
 
 /* ---MERCHANT BODY--- */
 
-.merchantBody{
-  height: 100%;
+.dropdownButton {
+  position: relative;
+  z-index: 1;
+}
+
+.merchantBody {
+  /* height: 100vh; */
   padding: 1rem;
   background-color: #282c34;
   text-align: center;
 }
 
+.merchantList {
+  max-width: 90%;
+  margin: auto;
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(auto-fill, 20rem);
+  grid-gap: 1rem;
+}
 
+.locationImage {
+  max-width: 100%;
+}
 
 /* ---MERCHANT CARD--- */
 
 .merchantCard {
+  max-width: 90%;
   border: 1px solid white;
   color: white;
   margin: 1rem;
@@ -137,15 +164,77 @@ header {
   color: white;
 }
 
-.brandName {
-  color: white;
-  font-size: 1.5rem;
-  margin: 0;
-  line-height: 60px;
-  padding-left: 5px;
-  position: fixed;
-  left: 10px;
+/* ---MODAL---  */
+
+
+
+.modal-content {
+  background-color: #282c34 !important;
 }
+
+.modal-footer {
+  border: none !important;
+  justify-content: center !important;
+  padding-top: 0 !important;
+}
+
+/* --- CAROUSEL --- */
+
+.TEST {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+}
+.itemZoneName {
+  color: white;
+}
+
+.carousel-control-next {
+  padding-left: 2rem !important;
+}
+.carousel-control-prev {
+  padding-right: 2rem !important;
+}
+
+.carousel-control-next-icon, .carousel-control-prev-icon {
+  border: 1px solid black;
+}
+
+.carousel-indicators {
+  margin-bottom: 0 !important; 
+  padding-top: 2rem !important;
+}
+
+
+/* .carousel-control-next-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
+} */
+
+/* .carousel-control-prev-icon,
+.carousel-control-next-icon {
+  height: 100px;
+  width: 100px;
+  outline: black;
+  background-size: 100%, 100%;
+  border-radius: 50%;
+  border: 1px solid black;
+  background-image: none;
+}
+
+.carousel-control-next-icon:after
+{
+  content: '>';
+  font-size: 55px;
+  color: red;
+}
+
+.carousel-control-prev-icon:after {
+  content: '<';
+  font-size: 55px;
+  color: red;
+} */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -167,7 +256,7 @@ header {
 .App-link {
   color: #61dafb;
 }
-.spawnTableList{
+.spawnTableList {
   display: inline;
   padding: 0.3rem;
 }
@@ -175,7 +264,6 @@ header {
 #hidden {
   display: none;
 }
-
 
 @keyframes App-logo-spin {
   from {

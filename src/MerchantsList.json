@@ -4,11 +4,23 @@
       "group": "1",
       "name": "Lucas",
       "location": "Yudia",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Ozhorn Hill",
+            "zoneImage": "lucas_ozhorn_hill"
+          },
+          {
+            "zoneName": "Saland Hill",
+            "zoneImage": "lucas_saland_hill"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
-            "hour": "5",
-            "minute": "26"
+            "hour": "2",
+            "minute": "45"
           },
           {
             "hour": "4",
