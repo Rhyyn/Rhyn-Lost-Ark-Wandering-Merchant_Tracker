@@ -7,15 +7,12 @@ import { DropdownButton, Dropdown } from "react-bootstrap";
 const Merchant = () => {
   const merchants = MerchantList.merchants;
   const [wantedMerchant, setWantedMerchant] = useState([]);
-  // hideThisComponent && console.log(hideThisComponent.parentElement);
-
 
   const onClick = (item) => {
-    //                        Add Merchant user chosed to State to pass down to CountdownCompo
+    //                        Add Merchant user chose to State to pass down to CountdownCompo
     setWantedMerchant((prevWantedMerchant) => [...prevWantedMerchant, item]);
   };
 
-  //{/* <img src="/images/Mac/traveling_merchant_mac_delphi_township.jpg"/> */}
   return (
     <div className="merchantPage">
       <header>
@@ -27,7 +24,7 @@ const Merchant = () => {
           id="dropdown-basic-button"
           title="Select Merchants to Track"
           autoClose="inside"
-          className="test"
+          className="dropdownButton"
         >
           {merchants.map((item, index) => {
             //          Map through the list of merchants of user to see
@@ -45,22 +42,22 @@ const Merchant = () => {
             );
           })}
         </DropdownButton>
-        {wantedMerchant && //                           If wantedMerchant exists
-          wantedMerchant.map((item, index) => {
-            //      map through then return each merchant user selected
-            return (
-              <CountdownCompo
-                id={index}
-                key={index}
-                wantedMerchant={item}
-              ></CountdownCompo>
-            );
-          })}
+        <div className="merchantList">
+          {wantedMerchant && //                           If wantedMerchant exists
+            wantedMerchant.map((item, index) => {
+              //      map through then return each merchant user selected
+              return (
+                <CountdownCompo
+                  id={index}
+                  key={index}
+                  wantedMerchant={item}
+                ></CountdownCompo>
+              );
+            })}
+        </div>
       </div>
     </div>
   );
 };
 
 export default Merchant;
-
-
