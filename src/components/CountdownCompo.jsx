@@ -1,6 +1,7 @@
-import { Modal } from "react-bootstrap";
+import { Modal, Button } from "react-bootstrap";
 import React, { useState } from "react";
 import CountdownTimer from "./CountdownTimer";
+import CarouselCompo from "./CarouselCompo";
 
 const CountdownCompo = (props) => {
   const data = props.wantedMerchant.spawntimer.times; //Spawn Times
@@ -8,10 +9,17 @@ const CountdownCompo = (props) => {
   const currentHour = new Date().getHours();
   const currentTime = new Date().getTime();
   const allSpawnTimes = [];
-  const [hasTimerEnded, setHasTimerEnded] = useState();
+  const [hasTimerEnded, setHasTimerEnded] = useState(true); // DELETE
   const [test, setTest] = useState(true);
 
   const [merchantSpawnTimer, setMerchantSpawnTimer] = useState();
+
+  // console.log(props.wantedMerchant.locationImage.images[0].zoneImage);
+
+  // let tempLocationImage = props.wantedMerchant.locationImage.images[0].zoneImage
+  // let tempName = props.wantedMerchant.name
+  // let tempImage = "/images/" + tempName + "/" + tempLocationImage + ".jpg"
+  // console.log(tempImage);
 
   // push all spawn times as MS date and convert to 24h Format
   data &&
@@ -80,13 +88,12 @@ const CountdownCompo = (props) => {
 
       {hasTimerEnded ? <button onClick={handleModalShow}>Show Spawn Locations</button> : null}
 
-      <Modal show={modalShow} onHide={handleModalClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Spawn Locations for {props.wantedMerchant.name}</Modal.Title>
-        </Modal.Header>
-        <Modal.Body><img src="/images/Mac/traveling_merchant_mac_delphi_township.jpg"/></Modal.Body>
+      <Modal centered show={modalShow} onHide={handleModalClose}>
+        <Modal.Body>
+          <CarouselCompo item={props.wantedMerchant}></CarouselCompo>
+        </Modal.Body>
         <Modal.Footer>
-          <button onClick={handleModalClose}>Close</button>
+          <Button variant="primary" onClick={handleModalClose}>Close</Button>
         </Modal.Footer>
       </Modal>
 
