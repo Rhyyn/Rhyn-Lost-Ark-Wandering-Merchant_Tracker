@@ -1,4 +1,4 @@
-import react from "react";
+import React from "react";
 import { Carousel} from "react-bootstrap";
 
 const CarouselCompo = (props) => {
@@ -9,7 +9,7 @@ const CarouselCompo = (props) => {
         return (
           <Carousel.Item key={index}>
             <div className="TEST">
-              <h3 className="itemZoneName">{item.zoneName}</h3>
+              <h4 className="itemZoneName">{item.zoneName}</h4>
               <img className="locationImage" src={"/images/" + props.item.name + "/" + item.zoneImage + ".jpg"}/>
             </div>
           </Carousel.Item>
