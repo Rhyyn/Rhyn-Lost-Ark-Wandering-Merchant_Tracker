@@ -16,6 +16,12 @@ header {
   position: sticky;
 }
 
+.btn:focus,.btn:active:focus,.btn.active:focus,
+.btn.focus,.btn:active.focus,.btn.active.focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
 .headerBox {
   background-color: #222429;
   height: 64px;
@@ -127,6 +133,16 @@ header {
   z-index: 1;
 }
 
+.dropdown-menu {
+  text-align: center !important;
+  left: 50% !important;
+  transform: translate(-50%, 40px) !important;
+}
+
+.dropdown-item {
+  padding: 0 !important;
+}
+
 .merchantBody {
   /* height: 100vh; */
   padding: 1rem;
@@ -164,12 +180,30 @@ header {
   color: white;
 }
 
+.cardButtonGroup {
+  display: flex;
+}
+
+.deleteButton, .showSpawnButton {
+  margin-bottom: 1rem;
+}
+
+.showSpawnButton {
+  margin-right: 0.2rem;
+}
+
+
 /* ---MODAL---  */
 
 
 
 .modal-content {
   background-color: #282c34 !important;
+  text-align: center;
+}
+
+.continentModalTitle {
+  color: white;
 }
 
 .modal-footer {
@@ -198,8 +232,20 @@ header {
   padding-right: 2rem !important;
 }
 
-.carousel-control-next-icon, .carousel-control-prev-icon {
-  border: 1px solid black;
+
+
+
+/* .carousel-control-next-icon, .carousel-control-prev-icon {
+  border: 1px solid black; 
+} */
+
+
+.carousel-control-next-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%230275d8 %27%3e%3cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e") !important;
+}
+
+.carousel-control-prev-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%230275d8 %27%3e%3cpath d=%27M11.354 1.646a.5.5 0 0 1 0 .708L5.707 8l5.647 5.646a.5.5 0 0 1-.708.708l-6-6a.5.5 0 0 1 0-.708l6-6a.5.5 0 0 1 .708 0z%27/%3e%3c/svg%3e") !important;
 }
 
 .carousel-indicators {
@@ -208,9 +254,6 @@ header {
 }
 
 
-/* .carousel-control-next-icon {
-  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23ff0000' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E") !important;
-} */
 
 /* .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -259,6 +302,10 @@ header {
 .spawnTableList {
   display: inline;
   padding: 0.3rem;
+}
+
+.spawnTableButton {
+  margin-bottom: 0.8rem !important;
 }
 
 #hidden {
