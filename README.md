@@ -1,3 +1,5 @@
-## LOST ARK TO DO / WANDERING MERCHANT TRACKER
+## WANDERING MERCHANT TRACKER
 
-Simple Lost Ark To Do and Wandering Merchant Tracker for Lost Ark Game.
+Simple Lost Ark Wandering Merchant Tracker for Lost Ark Game.
+
+WIP soon available!
