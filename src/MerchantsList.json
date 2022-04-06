@@ -49,6 +49,22 @@
       "group": "1",
       "name": "Morris",
       "location": "East Luterra",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Dyorika Plains",
+            "zoneImage": "morris_dyorika_plains"
+          },
+          {
+            "zoneName": "Sunbright Hill",
+            "zoneImage": "morris_sunbright_hill"
+          },
+          {
+            "zoneName": "Flowering Orchard",
+            "zoneImage": "morris_flowering_orchard"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -82,6 +98,30 @@
       "group": "1",
       "name": "Mac",
       "location": "Anikka",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Delphi Township",
+            "zoneImage": "mac_delphi_township"
+          },
+          {
+            "zoneName": "Rattan Hill",
+            "zoneImage": "mac_rattan_hill"
+          },
+          {
+            "zoneName": "Melody Forest",
+            "zoneImage": "mac_melody_forest"
+          },
+          {
+            "zoneName": "Twilight Mists",
+            "zoneImage": "mac_twilight_mists"
+          },
+          {
+            "zoneName": "Prisma Valley",
+            "zoneImage": "mac_prisma_valley"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -115,6 +155,30 @@
       "group": "1",
       "name": "Jeffrey",
       "location": "Shushire",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Frozen Sea",
+            "zoneImage": "jeffrey_frozen_sea"
+          },
+          {
+            "zoneName": "Bitterwind Hill",
+            "zoneImage": "jeffrey_bitterwind_hill"
+          },
+          {
+            "zoneName": "Ice Blood Plateau",
+            "zoneImage": "jeffrey_ice_blood_plateau"
+          },
+          {
+            "zoneName": "Lake Eternity",
+            "zoneImage": "jeffrey_lake_eternity"
+          },
+          {
+            "zoneName": "Icewing Heights",
+            "zoneImage": "jeffrey_icewing_heights"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -148,6 +212,14 @@
       "group": "1",
       "name": "Dorella",
       "location": "Feiton",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Feiton",
+            "zoneImage": "dorella_feiton"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -181,6 +253,30 @@
       "group": "2",
       "name": "Malone",
       "location": "West Luterra",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Mount Zagoras",
+            "zoneImage": "malone_mount_zagoras"
+          },
+          {
+            "zoneName": "Lakebar",
+            "zoneImage": "malone_lakebar"
+          },
+          {
+            "zoneName": "Medrick Monastery",
+            "zoneImage": "malone_medrick_monastery"
+          },
+          {
+            "zoneName": "Bilbrin Forest",
+            "zoneImage": "malone_bilbrin_forest"
+          },
+          {
+            "zoneName": "Battlebound Plains",
+            "zoneImage": "malone_battlebound_plains"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -214,6 +310,26 @@
       "group": "2",
       "name": "Burt",
       "location": "East Luterra",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Blackrose Chapel",
+            "zoneImage": "burst_blackrose_chapel"
+          },
+          {
+            "zoneName": "Leyar Terrace",
+            "zoneImage": "burst_leyar_terrace"
+          },
+          {
+            "zoneName": "Borea's Domain",
+            "zoneImage": "burst_boreas_domain"
+          },
+          {
+            "zoneName": "Croconys Seashore",
+            "zoneImage": "burst_croconys_seashore"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -247,6 +363,26 @@
       "group": "2",
       "name": "Oliver",
       "location": "Tortoyk",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Seaswept Woods",
+            "zoneImage": "oliver_seaswept_woods"
+          },
+          {
+            "zoneName": "Sweetwater Forest",
+            "zoneImage": "oliver_sweetwater_forest"
+          },
+          {
+            "zoneName": "Skyreach Steppe",
+            "zoneImage": "oliver_skyreach_steppe"
+          },
+          {
+            "zoneName": "Forest of Giants",
+            "zoneImage": "oliver_forest_of_giants"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -280,6 +416,34 @@
       "group": "2",
       "name": "Nox",
       "location": "Arthetine",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Arid Path",
+            "zoneImage": "nox_arid_path"
+          },
+          {
+            "zoneName": "Scraplands",
+            "zoneImage": "nox_scraplands"
+          },
+          {
+            "zoneName": "Nebel Horn",
+            "zoneImage": "nox_nebel_horn"
+          },
+          {
+            "zoneName": "Windbringer Hill",
+            "zoneImage": "nox_windbringer_hill"
+          },
+          {
+            "zoneName": "Tottrich",
+            "zoneImage": "nox_tottrich"
+          },
+          {
+            "zoneName": "Riza Falls",
+            "zoneImage": "nox_riza_falls"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -313,6 +477,30 @@
       "group": "2",
       "name": "Aricer",
       "location": "Rohendel",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Lake Shiverwave",
+            "zoneImage": "aricer_lake_shiverwave"
+          },
+          {
+            "zoneName": "Glass Lotus Lake",
+            "zoneImage": "aricer_glass_lotus_lake"
+          },
+          {
+            "zoneName": "Breezesome Brae",
+            "zoneImage": "aricer_breezesome_brae"
+          },
+          {
+            "zoneName": "Xeneela Ruins",
+            "zoneImage": "aricer_xeneela_ruins"
+          },
+          {
+            "zoneName": "Elzowin's Shade",
+            "zoneImage": "aricer_elzowins_shade"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -346,6 +534,26 @@
       "group": "2",
       "name": "Rayni",
       "location": "Punika",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Tideshelf Path",
+            "zoneImage": "rayni_tideshelf_path"
+          },
+          {
+            "zoneName": "Starsand Beach",
+            "zoneImage": "rayni_starstand_beach"
+          },
+          {
+            "zoneName": "Tikatika Colony",
+            "zoneImage": "rayni_tikatika_colony"
+          },
+          {
+            "zoneName": "Secret Forest",
+            "zoneImage": "rayni_secret_forest"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -379,6 +587,22 @@
       "group": "3",
       "name": "Ben",
       "location": "Rethramis",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Log Hill",
+            "zoneImage": "ben_log_hill"
+          },
+          {
+            "zoneName": "Ankumo Mountain",
+            "zoneImage": "ben_ankumo_mountain"
+          },
+          {
+            "zoneName": "Rethramis Border",
+            "zoneImage": "ben_rethramis_border"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -412,6 +636,30 @@
       "group": "3",
       "name": "Peter",
       "location": "North Vern",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Port Krona",
+            "zoneImage": "peter_port_krona"
+          },
+          {
+            "zoneName": "Parna Forest",
+            "zoneImage": "peter_parna_forest"
+          },
+          {
+            "zoneName": "Fesnar Highland",
+            "zoneImage": "peter_fesnar_highland"
+          },
+          {
+            "zoneName": "Vernesse Forest",
+            "zoneImage": "peter_vernesse_forest"
+          },
+          {
+            "zoneName": "Balankar Mountain",
+            "zoneImage": "peter_balankar_mountain"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
@@ -445,6 +693,30 @@
       "group": "3",
       "name": "Laitir",
       "location": "Yorn",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Yorn's Cradle",
+            "zoneImage": "laitir_yorns_cradle"
+          },
+          {
+            "zoneName": "Unfinished Garden",
+            "zoneImage": "laitir_unfinished_garden"
+          },
+          {
+            "zoneName": "Black Anvil Mine",
+            "zoneImage": "laitir_black_anvil_mine"
+          },
+          {
+            "zoneName": "Iron Hammer Mine",
+            "zoneImage": "laitir_iron_hammer_mine"
+          },
+          {
+            "zoneName": "Hall of Promise",
+            "zoneImage": "laitir_hall_of_promise"
+          }
+        ]
+      },
       "spawntimer": {
         "times": [
           {
