@@ -9,7 +9,7 @@ const CountdownCompo = (props) => {
   const currentHour = new Date().getHours();
   const currentTime = new Date().getTime();
   const allSpawnTimes = [];
-  const [hasTimerEnded, setHasTimerEnded] = useState(true); // DELETE
+  const [hasTimerEnded, setHasTimerEnded] = useState(); // DELETE
   const [test, setTest] = useState(true);
 
   const [merchantSpawnTimer, setMerchantSpawnTimer] = useState();
@@ -48,9 +48,9 @@ const CountdownCompo = (props) => {
 
   const onClick = (e) => {
     // onClick used to hide the card
-    e.target.parentElement.id = "hidden";
+    e.target.parentElement.parentElement.id = "hidden";
   };
-  const [modalShow, setModalShow] = useState(false)
+  const [modalShow, setModalShow] = useState(false);
   const handleModalShow = () => setModalShow(true);
   const handleModalClose = () => setModalShow(false);
 
@@ -77,23 +77,27 @@ const CountdownCompo = (props) => {
         </div>
       ) : null}
       {hasTimerEnded ? null : (
-        <button
-          className={props.wantedMerchant.name}
+        <Button
+          className="spawnTableButton"
           onClick={() => setShowSpawntable(!showSpawnTable)}
         >
-          Show SpawnTable for this Merchant
-        </button>
+          Show Spawning Hours AM/PM
+        </Button>
       )}
-      
-
-      {hasTimerEnded ? <button onClick={handleModalShow}>Show Spawn Locations</button> : null}
 
       <Modal centered show={modalShow} onHide={handleModalClose}>
+        <Modal.Title>
+          <h3 className="continentModalTitle">
+            {props.wantedMerchant.location}
+          </h3>
+        </Modal.Title>
         <Modal.Body>
           <CarouselCompo item={props.wantedMerchant}></CarouselCompo>
         </Modal.Body>
         <Modal.Footer>
-          <Button variant="primary" onClick={handleModalClose}>Close</Button>
+          <Button variant="primary" onClick={handleModalClose}>
+            Close
+          </Button>
         </Modal.Footer>
       </Modal>
 
@@ -108,8 +112,18 @@ const CountdownCompo = (props) => {
             })
           : null}
       </ul>
-
-      <button onClick={(e) => onClick(e)}>Delete Me</button>
+      <div className="cardButtonGroup">
+        {hasTimerEnded ? (
+          <Button className="showSpawnButton" onClick={handleModalShow}>Show Spawn Locations</Button>
+        ) : null}
+        <Button
+          className="deleteButton"
+          variant="danger"
+          onClick={(e) => onClick(e)}
+        >
+          Delete
+        </Button>
+      </div>
     </div>
   );
 };
