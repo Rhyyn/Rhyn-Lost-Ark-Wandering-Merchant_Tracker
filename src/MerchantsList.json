@@ -19,8 +19,8 @@
       "spawntimer": {
         "times": [
           {
-            "hour": "2",
-            "minute": "45"
+            "hour": "1",
+            "minute": "30"
           },
           {
             "hour": "4",
@@ -314,19 +314,19 @@
         "images": [
           {
             "zoneName": "Blackrose Chapel",
-            "zoneImage": "burst_blackrose_chapel"
+            "zoneImage": "burt_blackrose_chapel"
           },
           {
             "zoneName": "Leyar Terrace",
-            "zoneImage": "burst_leyar_terrace"
+            "zoneImage": "burt_leyar_terrace"
           },
           {
             "zoneName": "Borea's Domain",
-            "zoneImage": "burst_boreas_domain"
+            "zoneImage": "burt_boreas_domain"
           },
           {
             "zoneName": "Croconys Seashore",
-            "zoneImage": "burst_croconys_seashore"
+            "zoneImage": "burt_croconys_seashore"
           }
         ]
       },
@@ -542,7 +542,7 @@
           },
           {
             "zoneName": "Starsand Beach",
-            "zoneImage": "rayni_starstand_beach"
+            "zoneImage": "rayni_starsand_beach"
           },
           {
             "zoneName": "Tikatika Colony",
