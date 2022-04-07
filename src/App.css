@@ -16,10 +16,14 @@ header {
   position: sticky;
 }
 
-.btn:focus,.btn:active:focus,.btn.active:focus,
-.btn.focus,.btn:active.focus,.btn.active.focus {
-    outline: none !important;
-    box-shadow: none !important;
+.btn:focus,
+.btn:active:focus,
+.btn.active:focus,
+.btn.focus,
+.btn:active.focus,
+.btn.active.focus {
+  outline: none !important;
+  box-shadow: none !important;
 }
 
 .headerBox {
@@ -174,6 +178,7 @@ header {
   display: flex;
   flex-direction: column;
   align-items: center;
+  background-color: #21252e;
 }
 
 .merchantGroupTitle {
@@ -184,7 +189,8 @@ header {
   display: flex;
 }
 
-.deleteButton, .showSpawnButton {
+.deleteButton,
+.showSpawnButton {
   margin-bottom: 1rem;
 }
 
@@ -192,10 +198,7 @@ header {
   margin-right: 0.2rem;
 }
 
-
 /* ---MODAL---  */
-
-
 
 .modal-content {
   background-color: #282c34 !important;
@@ -232,13 +235,9 @@ header {
   padding-right: 2rem !important;
 }
 
-
-
-
 /* .carousel-control-next-icon, .carousel-control-prev-icon {
   border: 1px solid black; 
 } */
-
 
 .carousel-control-next-icon {
   background-image: url("data:image/svg+xml,%3csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 16 16%27 fill=%27%230275d8 %27%3e%3cpath d=%27M4.646 1.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1 0 .708l-6 6a.5.5 0 0 1-.708-.708L10.293 8 4.646 2.354a.5.5 0 0 1 0-.708z%27/%3e%3c/svg%3e") !important;
@@ -249,11 +248,14 @@ header {
 }
 
 .carousel-indicators {
-  margin-bottom: 0 !important; 
+  margin-bottom: 0 !important;
   padding-top: 2rem !important;
+  bottom: -20px !important;
 }
 
-
+.carousel-indicators > button {
+  background-color: #0275d8 !important;
+}
 
 /* .carousel-control-prev-icon,
 .carousel-control-next-icon {
@@ -300,8 +302,11 @@ header {
   color: #61dafb;
 }
 .spawnTableList {
-  display: inline;
   padding: 0.3rem;
+  display: inline;
+}
+.ulSpawnTableList {
+  display: inline;
 }
 
 .spawnTableButton {
