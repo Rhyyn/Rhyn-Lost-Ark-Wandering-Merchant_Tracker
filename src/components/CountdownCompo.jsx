@@ -5,22 +5,16 @@ import CarouselCompo from "./CarouselCompo";
 
 const CountdownCompo = (props) => {
   const data = props.wantedMerchant.spawntimer.times; //Spawn Times
-  const [showSpawnTable, setShowSpawntable] = useState(false);
-  const currentHour = new Date().getHours();
-  const currentTime = new Date().getTime();
-  const allSpawnTimes = [];
-  const [hasTimerEnded, setHasTimerEnded] = useState(); // DELETE
-  const [test, setTest] = useState(true);
+  const [showSpawnTable, setShowSpawntable] = useState(false); // State used to show the spawntable of Selected Merchant
+  const currentHour = new Date().getHours(); // current hour
+  const currentTime = new Date().getTime(); // current Time in Milliseconds
+  const allSpawnTimes = []; // array of all available spawntime of Selected Merchant
+  const [hasTimerEnded, setHasTimerEnded] = useState(); // Used to know whether or not current Timer has ended
+  const [merchantSpawnTimer, setMerchantSpawnTimer] = useState(); // State of 25 Minutes uptime when Selected Merchant has spawned
 
-  const [merchantSpawnTimer, setMerchantSpawnTimer] = useState();
 
-  // console.log(props.wantedMerchant.locationImage.images[0].zoneImage);
 
-  // let tempLocationImage = props.wantedMerchant.locationImage.images[0].zoneImage
-  // let tempName = props.wantedMerchant.name
-  // let tempImage = "/images/" + tempName + "/" + tempLocationImage + ".jpg"
-  // console.log(tempImage);
-
+  // TIME STUFFS
   // push all spawn times as MS date and convert to 24h Format
   data &&
     data.map((item) => {
@@ -33,35 +27,38 @@ const CountdownCompo = (props) => {
       }
       return null;
     });
-
-  //find closest spawn Time from currentTime
+  //find closest spawn Time of selected Merchant from currentTime
   const closestTime = allSpawnTimes.find(function (element) {
     return element > currentTime;
   });
 
-  if (test === true) {
-    setMerchantSpawnTimer(closestTime + 1500000);
-    setTest(false);
-    setTimeout(() => setHasTimerEnded(false), 1500000);
-  }
-  // console.log(merchantSpawnTimer);
 
+// Start Timer of 25 minutes after Merchant has Spawned then after 25 minutes start Tracking next Spawn
+  const switchTimers = () => {
+    setMerchantSpawnTimer(closestTime + 1500000);
+    setTimeout(() => setHasTimerEnded(false), 1500000);
+  };
+
+  // onClick target card element and hide the card
   const onClick = (e) => {
-    // onClick used to hide the card
     e.target.parentElement.parentElement.id = "hidden";
   };
+
+  // MODAL LOGICS
   const [modalShow, setModalShow] = useState(false);
   const handleModalShow = () => setModalShow(true);
   const handleModalClose = () => setModalShow(false);
 
   return (
     <div className="merchantCard" id={props.id}>
-      <p>Name: {props.wantedMerchant.name}</p>
-      <p>Location: {props.wantedMerchant.location}</p>
+      <h4>{props.wantedMerchant.name}</h4>
+      <h5>{props.wantedMerchant.location}</h5>
       {hasTimerEnded ? null : (
         <CountdownTimer
           goal={closestTime}
           setHasTimerEnded={setHasTimerEnded}
+          switchTimers={switchTimers}
+          timerName={"willSpawn"}
         ></CountdownTimer>
       )}
       {hasTimerEnded ? (
@@ -72,6 +69,7 @@ const CountdownCompo = (props) => {
             <CountdownTimer
               goal={merchantSpawnTimer}
               setHasTimerEnded={setHasTimerEnded}
+              timerName={"hasSpawned"}
             ></CountdownTimer>
           )}
         </div>
@@ -100,7 +98,6 @@ const CountdownCompo = (props) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
       <ul>
         {showSpawnTable
           ? data.map((item, index) => {
@@ -112,9 +109,12 @@ const CountdownCompo = (props) => {
             })
           : null}
       </ul>
+
       <div className="cardButtonGroup">
         {hasTimerEnded ? (
-          <Button className="showSpawnButton" onClick={handleModalShow}>Show Spawn Locations</Button>
+          <Button className="showSpawnButton" onClick={handleModalShow}>
+            Show Spawn Locations
+          </Button>
         ) : null}
         <Button
           className="deleteButton"
