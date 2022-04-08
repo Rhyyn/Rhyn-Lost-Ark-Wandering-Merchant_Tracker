@@ -156,7 +156,7 @@ header {
 
 .merchantList {
   max-width: 90%;
-  margin: auto;
+  margin: 0 auto 64px auto;
   display: grid;
   justify-content: center;
   grid-template-columns: repeat(auto-fill, 20rem);
@@ -280,6 +280,44 @@ header {
   font-size: 55px;
   color: red;
 } */
+
+/* --- FOOTER --- */
+.footerBox {
+  background-color: #222429;
+  height: 80px;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.formContainer {
+  height: 100%;
+  max-width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.form-check {
+  color: white;
+  width: 230px;
+  text-align: center;
+}
+
+
+.formCheckboxContainer {
+  width: 300px;
+  height: 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+/* --- END OF FOOTER --- */
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
