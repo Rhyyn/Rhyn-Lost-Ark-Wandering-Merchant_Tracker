@@ -141,6 +141,7 @@ header {
   text-align: center !important;
   left: 50% !important;
   transform: translate(-50%, 40px) !important;
+  padding-top: 0 !important;
 }
 
 .dropdown-item {
@@ -172,6 +173,7 @@ header {
 .merchantCard {
   max-width: 90%;
   border: 1px solid white;
+  border-radius: 7px;
   color: white;
   margin: 1rem;
   width: 25rem;
@@ -183,6 +185,10 @@ header {
 
 .merchantGroupTitle {
   color: white;
+}
+
+.trackNextSpawnButton {
+  margin-bottom: 0.5rem;
 }
 
 .cardButtonGroup {
