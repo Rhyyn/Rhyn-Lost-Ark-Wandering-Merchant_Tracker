@@ -2,9 +2,8 @@ import React from "react";
 import { Carousel} from "react-bootstrap";
 
 const CarouselCompo = (props) => {
-  console.log(props.item.locationImage.images);
   return (
-    <Carousel  interval={null} controls={true}>
+    <Carousel interval={null} controls={true}>
       {props.item.locationImage.images.map((item, index) => {
         return (
           <Carousel.Item key={index}>
