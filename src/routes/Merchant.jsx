@@ -9,6 +9,9 @@ const Merchant = () => {
   const [wantedMerchant, setWantedMerchant] = useState([]);
   const [is5MinSwitchOn, setIs5MinSwitchOn] = useState(false);
   const [is10MinSwitchOn, setIs10MinSwitchOn] = useState(false);
+  let time = new Date().getTime();
+  let demoTime = [time + 20000, time + 40000, time + 60000, time + 80000, time + 100000, time + 120000]; // USED FOR DEMO
+
 
   const on5MinSwitchAction = () => {
     setIs5MinSwitchOn(!is5MinSwitchOn);
@@ -104,8 +107,9 @@ const Merchant = () => {
                   id={index}
                   key={index}
                   wantedMerchant={item}
-                  is5MinSwitchOn={is5MinSwitchOn} // pass state of Switch Reminders buttons to Card Compo
-                  is10MinSwitchOn={is10MinSwitchOn} // pass state of Switch Reminders buttons to Card Compo
+                  is5MinSwitchOn={is5MinSwitchOn}    // pass state of Switch Reminders buttons to Card Compo
+                  is10MinSwitchOn={is10MinSwitchOn}  // pass state of Switch Reminders buttons to Card Compo
+                  demoTime={demoTime}                // USED FOR DEMO
                 ></CountdownCompo>
               );
             })}
