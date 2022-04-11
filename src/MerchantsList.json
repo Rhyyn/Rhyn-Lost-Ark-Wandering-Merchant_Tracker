@@ -2,6 +2,67 @@
   "merchants": [
     {
       "group": "1",
+      "name": "DEMO MERCHANT",
+      "location": "Arthetine",
+      "locationImage": {
+        "images": [
+          {
+            "zoneName": "Arid Path",
+            "zoneImage": "nox_arid_path"
+          },
+          {
+            "zoneName": "Scraplands",
+            "zoneImage": "nox_scraplands"
+          },
+          {
+            "zoneName": "Nebel Horn",
+            "zoneImage": "nox_nebel_horn"
+          },
+          {
+            "zoneName": "Windbringer Hill",
+            "zoneImage": "nox_windbringer_hill"
+          },
+          {
+            "zoneName": "Tottrich",
+            "zoneImage": "nox_tottrich"
+          },
+          {
+            "zoneName": "Riza Falls",
+            "zoneImage": "nox_riza_falls"
+          }
+        ]
+      },
+      "spawntimer": {
+        "times": [
+          {
+            "hour": "1",
+            "minute": "30"
+          },
+          {
+            "hour": "4",
+            "minute": "30"
+          },
+          {
+            "hour": "5",
+            "minute": "30"
+          },
+          {
+            "hour": "7",
+            "minute": "30"
+          },
+          {
+            "hour": "8",
+            "minute": "30"
+          },
+          {
+            "hour": "11",
+            "minute": "30"
+          }
+        ]
+      }
+    },
+    {
+      "group": "1",
       "name": "Lucas",
       "location": "Yudia",
       "locationImage": {
