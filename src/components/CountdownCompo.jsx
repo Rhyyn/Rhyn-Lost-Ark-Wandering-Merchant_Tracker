@@ -1,5 +1,5 @@
 import { Modal, Button } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import CountdownTimer from "./CountdownTimer";
 import CarouselCompo from "./CarouselCompo";
 
@@ -9,12 +9,18 @@ const CountdownCompo = (props) => {
   const currentHour = new Date().getHours(); // current hour
   const currentTime = new Date().getTime(); // current Time in Milliseconds
   const allSpawnTimes = []; // array of all available spawntime of Selected Merchant
-  const [hasTimerEnded, setHasTimerEnded] = useState(); // Used to know whether or not current Timer has ended
+  const [hasTimerEnded, setHasTimerEnded] = useState(false); // Used to know whether or not current Timer has ended
   const [merchantSpawnTimer, setMerchantSpawnTimer] = useState(); // State of 25 Minutes uptime when Selected Merchant has spawned
+
 
   // TIME STUFFS
   // push all spawn times as MS date and convert to 24h Format
-  data &&
+  if (props.wantedMerchant.name === "DEMO MERCHANT") { // USED FOR DEMO
+    props.demoTime.map((item, index) => {              // USED FOR DEMO
+      allSpawnTimes.push(item)                         // USED FOR DEMO
+    })                                                 // USED FOR DEMO
+  } else {
+    data &&
     data.map((item) => {
       if (currentHour >= 12) {
         allSpawnTimes.push(
@@ -25,14 +31,16 @@ const CountdownCompo = (props) => {
       }
       return null;
     });
+  }
+
   //find closest spawn Time of selected Merchant from currentTime
-  const closestTime = allSpawnTimes.find(function (element) {
+  let closestTime = allSpawnTimes.find(function (element) {
     return element > currentTime;
   });
 
   // Start Timer of 25 minutes after Merchant has Spawned then after 25 minutes start Tracking next Spawn
   const switchTimers = () => {
-    setMerchantSpawnTimer(closestTime + 1500000);
+    setMerchantSpawnTimer(closestTime + 1500000); // 1500000 ms = 25mins
     setTimeout(() => setHasTimerEnded(false), 1500000);
   };
 
@@ -52,7 +60,6 @@ const CountdownCompo = (props) => {
     window.speechSynthesis.speak(msg);
   }
 
-
   return (
     <div className="merchantCard" id={props.id}>
       <h4>{props.wantedMerchant.name}</h4>
@@ -66,7 +73,6 @@ const CountdownCompo = (props) => {
           playSoundMerchantSpawned={playSoundMerchantSpawned}
           is5MinSwitchOn={props.is5MinSwitchOn} // pass state of Switch Reminders buttons to timer
           is10MinSwitchOn={props.is10MinSwitchOn} // pass state of Switch Reminders buttons to timer
-
         ></CountdownTimer>
       )}
       {hasTimerEnded ? (
@@ -117,7 +123,15 @@ const CountdownCompo = (props) => {
             })
           : null}
       </ul>
-
+      {hasTimerEnded ? (
+        <Button
+          variant="warning"
+          className="trackNextSpawnButton"
+          onClick={() => setHasTimerEnded(false)}
+        >
+          Track Next Spawn
+        </Button>
+      ) : null}
       <div className="cardButtonGroup">
         {hasTimerEnded ? (
           <Button className="showSpawnButton" onClick={handleModalShow}>

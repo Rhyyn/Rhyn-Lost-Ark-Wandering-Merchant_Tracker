@@ -11,7 +11,6 @@ const CountdownTimer = (props) => {
   // CALCULATE REMAINING TIME FROM MS
   const remaining = goal - currentTime;
 
-
   useEffect(() => {
     if (remaining > 1000) {
       let sec = Math.floor(remaining / 1000);
