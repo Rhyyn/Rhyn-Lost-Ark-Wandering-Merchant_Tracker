@@ -2,41 +2,95 @@ import { Modal, Button } from "react-bootstrap";
 import React, { useEffect, useState } from "react";
 import CountdownTimer from "./CountdownTimer";
 import CarouselCompo from "./CarouselCompo";
+import moment from "moment";
+import momentTimezone from "moment-timezone";
 
 const CountdownCompo = (props) => {
   const data = props.wantedMerchant.spawntimer.times; //Spawn Times
   const [showSpawnTable, setShowSpawntable] = useState(false); // State used to show the spawntable of Selected Merchant
-  const currentHour = new Date().getHours(); // current hour
-  const currentTime = new Date().getTime(); // current Time in Milliseconds
   const allSpawnTimes = []; // array of all available spawntime of Selected Merchant
   const [hasTimerEnded, setHasTimerEnded] = useState(false); // Used to know whether or not current Timer has ended
   const [merchantSpawnTimer, setMerchantSpawnTimer] = useState(); // State of 25 Minutes uptime when Selected Merchant has spawned
+  let userServer = props.userServer;
+  let serverDate = "";
+  let updatedDate = serverDate;
+  let serverDateAsMs = "";
+
+  //MOMENT
+  // let testDateOffset = (moment.utc() - 25200000);
+  let dateAsMs = ((moment.utc().unix() * 1000));        // UTC time in MS - offset as SUBSTRACTION
+  let dateAsDate = moment.utc(dateAsMs).format();       // UTC time as Date string format  - offset as .utcOffset(-7)
+  // moment.utc(dateAsMs).set('hour', 6).format();      // can set Hour/Minute etc..
+
+  // console.log(dateAsMs);
+  // console.log(dateAsDate);
+
+
 
 
   // TIME STUFFS
+
+  if (userServer === "US West") {
+    serverDate = moment.utc(dateAsMs).utcOffset(-7);
+    updatedDate = serverDate;
+    serverDateAsMs = ((moment.utc().unix() * 1000) - 25200000);
+  } else if (userServer === "US East") {
+    serverDate = moment.utc(dateAsMs).utcOffset(-4);
+    updatedDate = serverDate;
+    serverDateAsMs = ((moment.utc().unix() * 1000) - 14400000 );
+  } else if (userServer === "EU West") {
+    serverDate = moment.utc(dateAsMs);
+    updatedDate = serverDate;
+    serverDateAsMs = ((moment.utc().unix() * 1000));
+  } else if (userServer === "EU Central") {
+    serverDate = moment.utc(dateAsMs).utcOffset(1);
+    updatedDate = serverDate;
+    serverDateAsMs = ((moment.utc().unix() * 1000) + 3600000 );
+  } else if (userServer === "South America") {
+    serverDate = moment.utc(dateAsMs).utcOffset(-3);
+    updatedDate = serverDate;
+    serverDateAsMs = ((moment.utc().unix() * 1000) - 10800000 );
+  }
+
+
+  let currentHour = serverDate.hour(); // current hour
+  // console.log(currentHour);
+
   // push all spawn times as MS date and convert to 24h Format
-  if (props.wantedMerchant.name === "DEMO MERCHANT") { // USED FOR DEMO
-    props.demoTime.map((item, index) => {              // USED FOR DEMO
-      allSpawnTimes.push(item)                         // USED FOR DEMO
-    })                                                 // USED FOR DEMO
+  if (props.wantedMerchant.name === "DEMO MERCHANT") {
+    // USED FOR DEMO
+    props.demoTime.map((item, index) => {
+      // USED FOR DEMO
+      allSpawnTimes.push(item); // USED FOR DEMO
+    }); // USED FOR DEMO
   } else {
     data &&
-    data.map((item) => {
-      if (currentHour >= 12) {
-        allSpawnTimes.push(
-          new Date().setHours(parseInt(item.hour) + 12, item.minute, 0)
-        );
-      } else {
-        allSpawnTimes.push(new Date().setHours(item.hour, item.minute, 0));
-      }
-      return null;
-    });
+      data.map((item) => {
+        if (currentHour >= 12) { 
+          updatedDate = updatedDate.utc().set({'hour': parseInt(item.hour) + 12, 'minute': item.minute, 'second': 0});  
+          allSpawnTimes.push(
+            // updatedDate.setHours(parseInt(item.hour) + 12, item.minute, 0)
+            (updatedDate.unix() * 1000)
+          );
+        } else {
+          // newDate.setHours(item.hour, item.minute, 0);
+          updatedDate = updatedDate.utc().set({'hour': item.hour, 'minute': item.minute, 'second': 0});
+          allSpawnTimes.push(
+            // updatedDate.setHours(item.hour, item.minute, 0)
+            (updatedDate.unix() * 1000)
+            );
+        }
+        return null;
+      });
   }
+  console.log(moment.utc(serverDateAsMs).format());
+
 
   //find closest spawn Time of selected Merchant from currentTime
   let closestTime = allSpawnTimes.find(function (element) {
-    return element > currentTime;
+    return element > serverDateAsMs;
   });
+  // console.log("closest" + " : " + closestTime);
 
   // Start Timer of 25 minutes after Merchant has Spawned then after 25 minutes start Tracking next Spawn
   const switchTimers = () => {
@@ -66,6 +120,7 @@ const CountdownCompo = (props) => {
       <h5>{props.wantedMerchant.location}</h5>
       {hasTimerEnded ? null : (
         <CountdownTimer
+          userServer={userServer}
           goal={closestTime}
           setHasTimerEnded={setHasTimerEnded}
           switchTimers={switchTimers}
