@@ -132,9 +132,18 @@ header {
 
 /* ---MERCHANT BODY--- */
 
+
+.userServerText {
+  color: white;
+}
+
+
 .dropdownButton {
   position: relative;
-  z-index: 1;
+  /* z-index: 1; */
+}
+.serverButton {
+  margin-bottom: 1rem;
 }
 
 .dropdown-menu {

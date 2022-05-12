@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import moment from "moment";
 
 const CountdownTimer = (props) => {
   const [currentTime, setCurrentTime] = useState();
@@ -7,7 +8,7 @@ const CountdownTimer = (props) => {
   const [seconds, setSeconds] = useState();
   const goal = props.goal;
   const [isPlaying, setIsPlaying] = useState(false); // State used to make Reminders TTS play only once
-
+  const userServer = props.userServer;
   // CALCULATE REMAINING TIME FROM MS
   const remaining = goal - currentTime;
 
@@ -50,17 +51,28 @@ const CountdownTimer = (props) => {
     }
   }, [remaining, props]); // Adding state as the dependency allows it run every time the state changes
 
-
   // Play Reminder sounds if either props.5MinSwitcOn === true || props.5minSwitchOn === true
   useEffect(() => {
-    if (props.is5MinSwitchOn && !isPlaying && minutes === "05m" && seconds === "00s") {
+    if (
+      props.is5MinSwitchOn &&
+      !isPlaying &&
+      minutes === "05m" &&
+      seconds === "00s"
+    ) {
       setIsPlaying(true); // used to stop this from running more than once
       let msg = new SpeechSynthesisUtterance("5 minutes before Merchant Spawn");
       msg.volume = 0.5;
       window.speechSynthesis.speak(msg);
-    } else if (props.is10MinSwitchOn && !isPlaying && minutes === "10m" && seconds === "00s") {
+    } else if (
+      props.is10MinSwitchOn &&
+      !isPlaying &&
+      minutes === "10m" &&
+      seconds === "00s"
+    ) {
       setIsPlaying(true); // used to stop this from running more than once
-      let msg = new SpeechSynthesisUtterance("10 minutes before Merchant Spawn");
+      let msg = new SpeechSynthesisUtterance(
+        "10 minutes before Merchant Spawn"
+      );
       msg.volume = 0.5;
       window.speechSynthesis.speak(msg);
     } else {
@@ -68,11 +80,20 @@ const CountdownTimer = (props) => {
     }
   });
 
-
   // UPDATE CURRENT TIME EVERY SECOND
+
   const interval = setInterval(() => {
-    if (goal > new Date()) {
-      setCurrentTime(new Date().getTime());
+    if (userServer === "US West") {
+      setCurrentTime((moment.utc().unix() * 1000) - 25200000);
+    } else if (userServer === "US East") {
+      console.log("us east");
+      setCurrentTime((moment.utc().unix() * 1000) - 14400000 );
+    } else if (userServer === "EU West") {
+      setCurrentTime((moment.utc().unix() * 1000));
+    } else if (userServer === "EU Central") {
+      setCurrentTime((moment.utc().unix() * 1000) + 3600000 );
+    } else if (userServer === "South America") {
+      setCurrentTime((moment.utc().unix() * 1000) - 10800000 );
     } else {
       clearInterval(interval);
     }
