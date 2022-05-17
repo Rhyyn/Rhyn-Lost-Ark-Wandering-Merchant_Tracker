@@ -1,9 +1,8 @@
 import { Modal, Button } from "react-bootstrap";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import CountdownTimer from "./CountdownTimer";
 import CarouselCompo from "./CarouselCompo";
 import moment from "moment";
-import momentTimezone from "moment-timezone";
 
 const CountdownCompo = (props) => {
   const data = props.wantedMerchant.spawntimer.times; //Spawn Times
@@ -19,13 +18,8 @@ const CountdownCompo = (props) => {
   //MOMENT
   // let testDateOffset = (moment.utc() - 25200000);
   let dateAsMs = ((moment.utc().unix() * 1000));        // UTC time in MS - offset as SUBSTRACTION
-  let dateAsDate = moment.utc(dateAsMs).format();       // UTC time as Date string format  - offset as .utcOffset(-7)
+ // let dateAsDate = moment.utc(dateAsMs).format();        UTC time as Date string format  - offset as .utcOffset(-7)
   // moment.utc(dateAsMs).set('hour', 6).format();      // can set Hour/Minute etc..
-
-  // console.log(dateAsMs);
-  // console.log(dateAsDate);
-
-
 
 
   // TIME STUFFS
@@ -54,7 +48,6 @@ const CountdownCompo = (props) => {
 
 
   let currentHour = serverDate.hour(); // current hour
-  // console.log(currentHour);
 
   // push all spawn times as MS date and convert to 24h Format
   if (props.wantedMerchant.name === "DEMO MERCHANT") {
@@ -83,14 +76,14 @@ const CountdownCompo = (props) => {
         return null;
       });
   }
-  console.log(moment.utc(serverDateAsMs).format());
+  // console.log(moment.utc(serverDateAsMs).format());
 
 
   //find closest spawn Time of selected Merchant from currentTime
   let closestTime = allSpawnTimes.find(function (element) {
     return element > serverDateAsMs;
   });
-  // console.log("closest" + " : " + closestTime);
+
 
   // Start Timer of 25 minutes after Merchant has Spawned then after 25 minutes start Tracking next Spawn
   const switchTimers = () => {
