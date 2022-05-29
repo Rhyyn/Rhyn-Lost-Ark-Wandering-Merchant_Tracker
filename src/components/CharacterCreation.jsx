@@ -1,15 +1,11 @@
 import React from "react";
 
 const CharacterCreation = () => {
-
-    return(
+    return (
         <div className="characterCreationContainer">
-            <form>
-                Test
-            </form>
+            <form>Test</form>
         </div>
-    )
-
-}
+    );
+};
 
 export default CharacterCreation;
