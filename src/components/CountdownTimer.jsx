@@ -12,8 +12,6 @@ const CountdownTimer = (props) => {
     // CALCULATE REMAINING TIME FROM MS
     const remaining = goal - currentTime;
 
-
-
     useEffect(() => {
         if (remaining > 1000) {
             let sec = Math.floor(remaining / 1000);
@@ -43,7 +41,9 @@ const CountdownTimer = (props) => {
             // check if currentTimer is for next Merchant Spawn and initiate timer switch for hasSpawned
             props.setHasTimerEnded(true);
             props.switchTimers();
-            props.playSoundMerchantSpawned(); // play TTS Merchant has spawned when timer ends
+            if (props.soundAlert) {
+                props.playSoundMerchantSpawned(); // play TTS Merchant has spawned when timer ends
+            }
         } else if (props.timerName === "hasSpawned" && remaining < 999) {
             // check if currenTimer is for Merchant uptime
             props.setHasTimerEnded(true);
@@ -56,6 +56,7 @@ const CountdownTimer = (props) => {
     // Play Reminder sounds if either props.5MinSwitcOn === true || props.5minSwitchOn === true
     useEffect(() => {
         if (
+            props.soundAlert &&
             props.is5MinSwitchOn &&
             !isPlaying &&
             minutes === "05m" &&
@@ -68,6 +69,7 @@ const CountdownTimer = (props) => {
             msg.volume = 0.5;
             window.speechSynthesis.speak(msg);
         } else if (
+            props.soundAlert &&
             props.is10MinSwitchOn &&
             !isPlaying &&
             minutes === "10m" &&

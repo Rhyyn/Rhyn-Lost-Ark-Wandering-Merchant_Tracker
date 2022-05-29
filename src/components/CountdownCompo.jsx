@@ -133,6 +133,7 @@ const CountdownCompo = (props) => {
                     switchTimers={switchTimers}
                     timerName={"willSpawn"}
                     playSoundMerchantSpawned={playSoundMerchantSpawned}
+                    soundAlert={props.soundAlert}
                     is5MinSwitchOn={props.is5MinSwitchOn} // pass state of Switch Reminders buttons to timer
                     is10MinSwitchOn={props.is10MinSwitchOn} // pass state of Switch Reminders buttons to timer
                     merchantName={props.wantedMerchant.name}
@@ -143,6 +144,7 @@ const CountdownCompo = (props) => {
                     <p>Merchant has spawned !</p>
                     <p>Time Left :</p>
                     <CountdownTimer
+                        soundAlert={props.soundAlert}
                         goal={merchantSpawnTimer}
                         setHasTimerEnded={setHasTimerEnded}
                         userServer={userServer}
