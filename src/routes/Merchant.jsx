@@ -16,6 +16,7 @@ const Merchant = () => {
     const [wantedMerchant, setWantedMerchant] = useState([]);
     const [is5MinSwitchOn, setIs5MinSwitchOn] = useState(false);
     const [is10MinSwitchOn, setIs10MinSwitchOn] = useState(false);
+    const [soundAlerts, setSoundAlerts] = useState(false);
     const [userServer, setUserServer] = useState();
     const [showServer, setShowServer] = useState(false);
     let time = new Date().getTime();
@@ -27,6 +28,10 @@ const Merchant = () => {
         time + 100000,
         time + 120000,
     ]; // USED FOR DEMO
+
+    const soundAlert = () => {
+        setSoundAlerts(!soundAlerts);
+    };
 
     const on5MinSwitchAction = () => {
         setIs5MinSwitchOn(!is5MinSwitchOn);
@@ -55,6 +60,15 @@ const Merchant = () => {
                 <Header></Header>
             </header>
             <div className="merchantBody">
+                <Form className="soundAlertSwitch">
+                    <Form.Check
+                        type="switch"
+                        id="custom-switch"
+                        label="Sound Alerts"
+                        onClick={() => soundAlert()}
+                    />
+                </Form>
+
                 {showServer ? (
                     <h5 className="userServerText">{userServer}</h5>
                 ) : (
@@ -162,6 +176,7 @@ const Merchant = () => {
                                     key={index}
                                     userServer={userServer}
                                     wantedMerchant={item}
+                                    soundAlert={soundAlerts}
                                     is5MinSwitchOn={is5MinSwitchOn} // pass state of Switch Reminders buttons to Card Compo
                                     is10MinSwitchOn={is10MinSwitchOn} // pass state of Switch Reminders buttons to Card Compo
                                     demoTime={demoTime} // USED FOR DEMO
