@@ -136,6 +136,14 @@ header {
 .userServerText {
   color: white;
 }
+.soundAlertSwitch {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5rem;
+}
+.soundAlertSwitch > div {
+  width: 140px;
+}
 
 
 .dropdownButton {
