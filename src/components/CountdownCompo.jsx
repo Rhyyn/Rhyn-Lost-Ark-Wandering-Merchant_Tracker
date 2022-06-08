@@ -172,14 +172,14 @@ const CountdownCompo = (props) => {
             </Modal>
             <ul>
                 {showSpawnTable
-                    ? data.map((item, index) => {
+                    ? !hasTimerEnded ? data.map((item, index) => {
                           return (
                               <li className="spawnTableList" key={index}>
                                   {item.hour}:{item.minute}
                               </li>
                           );
                       })
-                    : null}
+                    : null : null}
             </ul>
             {hasTimerEnded ? (
                 <Button
