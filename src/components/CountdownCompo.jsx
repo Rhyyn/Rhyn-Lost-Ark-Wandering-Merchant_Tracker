@@ -14,7 +14,6 @@ const CountdownCompo = (props) => {
     let serverDate = "";
     let updatedDate = serverDate;
     let serverDateAsMs = "";
-    let userClientTime = moment().valueOf();
 
     //MOMENT
     // let testDateOffset = (moment.utc() - 25200000);
@@ -45,8 +44,8 @@ const CountdownCompo = (props) => {
         updatedDate = serverDate;
         serverDateAsMs = moment.utc().unix() * 1000 - 10800000;
     }
-
-    let currentHour = serverDate.hour(); // current hour
+    // current hour
+    //let currentHour = serverDate.hour();
 
     // push all spawn times as MS date and convert to 24h Format
     if (props.wantedMerchant.name === "DEMO MERCHANT") {
@@ -60,37 +59,30 @@ const CountdownCompo = (props) => {
         ]; // USED FOR DEMO
         demoTime.map((time, index) => {
             allSpawnTimes.push(time);
+            return null;
         });
     } else {
         data &&
             data.map((item) => {
-                if (currentHour >= 12) {
-                    updatedDate = updatedDate.utc().set({
-                        hour: parseInt(item.hour) + 12,
-                        minute: item.minute,
-                        second: 0,
-                    });
-                    allSpawnTimes.push(
-                        // updatedDate.setHours(parseInt(item.hour) + 12, item.minute, 0)
-                        updatedDate.unix() * 1000
-                    );
-                } else {
-                    // newDate.setHours(item.hour, item.minute, 0);
-                    updatedDate = updatedDate.utc().set({
-                        hour: item.hour,
-                        minute: item.minute,
-                        second: 0,
-                    });
-                    allSpawnTimes.push(
-                        // updatedDate.setHours(item.hour, item.minute, 0)
-                        updatedDate.unix() * 1000
-                    );
-                }
+                updatedDate = updatedDate.utc().set({
+                    // take AM hours and push them to allSpawnTimes as ms time
+                    hour: item.hour,
+                    minute: item.minute,
+                    second: 0,
+                });
+                allSpawnTimes.push(updatedDate.unix() * 1000);
+                updatedDate = updatedDate.utc().set({
+                    // take AM hours and add 12 to get PM times and push them to allSpawnTimes as ms time
+                    hour: parseInt(item.hour) + 12,
+                    minute: item.minute,
+                    second: 0,
+                });
+                allSpawnTimes.push(updatedDate.unix() * 1000);
                 return null;
             });
     }
-
     //find closest spawn Time of selected Merchant from currentTime
+    // console.log("Server time is : " + serverDateAsMs);
     let closestTime = allSpawnTimes.find(function (element) {
         if (props.wantedMerchant.name === "DEMO MERCHANT") {
             return element > serverDateAsMs;
@@ -98,6 +90,8 @@ const CountdownCompo = (props) => {
             return element > serverDateAsMs;
         }
     });
+    // console.log("all times are : " + allSpawnTimes);
+    // console.log("closestTime is : " + closestTime);
 
     // Start Timer of 25 minutes after Merchant has Spawned then after 25 minutes start Tracking next Spawn
     const switchTimers = () => {
