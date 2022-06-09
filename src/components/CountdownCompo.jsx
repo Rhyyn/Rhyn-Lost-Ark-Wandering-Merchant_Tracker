@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CountdownTimer from "./CountdownTimer";
 import CarouselCompo from "./CarouselCompo";
 import moment from "moment";
+import SpawningHours from "./SpawningHours";
 
 const CountdownCompo = (props) => {
     const data = props.wantedMerchant.spawntimer.times; //Spawn Times
@@ -133,6 +134,7 @@ const CountdownCompo = (props) => {
                     merchantName={props.wantedMerchant.name}
                 ></CountdownTimer>
             )}
+
             {hasTimerEnded ? (
                 <div>
                     <p>Merchant has spawned !</p>
@@ -146,14 +148,10 @@ const CountdownCompo = (props) => {
                     ></CountdownTimer>
                 </div>
             ) : null}
-            {hasTimerEnded ? null : (
-                <Button
-                    className="spawnTableButton"
-                    onClick={() => setShowSpawntable(!showSpawnTable)}
-                >
-                    Show Spawning Hours AM/PM
-                </Button>
-            )}
+            <SpawningHours
+                hasTimerEnded={hasTimerEnded}
+                data={data}
+            ></SpawningHours>
 
             <Modal centered show={modalShow} onHide={handleModalClose}>
                 <Modal.Title>
@@ -170,17 +168,7 @@ const CountdownCompo = (props) => {
                     </Button>
                 </Modal.Footer>
             </Modal>
-            <ul>
-                {showSpawnTable
-                    ? !hasTimerEnded ? data.map((item, index) => {
-                          return (
-                              <li className="spawnTableList" key={index}>
-                                  {item.hour}:{item.minute}
-                              </li>
-                          );
-                      })
-                    : null : null}
-            </ul>
+
             {hasTimerEnded ? (
                 <Button
                     variant="warning"
