@@ -27,10 +27,3 @@ Simple Lost Ark Wandering Merchant Tracker for Lost Ark Game.
 
 ## Plays Sound when a selected Merchant has spawned, can add reminders of 5 or 10 minutes : 
 ![merchand sound reminders](https://i.imgur.com/ebO0cmw.png)
-
-
-# TODO :
-
-- Fix Demo Merchant
-- Add button to turn off sound notifications
-- Fix spawning hours span showing after merchant has spawned
